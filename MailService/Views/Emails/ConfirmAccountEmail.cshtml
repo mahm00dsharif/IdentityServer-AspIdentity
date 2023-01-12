@@ -1,0 +1,26 @@
+﻿@using MailService.Models
+@model ConfirmAccountEmailViewModel
+
+@{
+    ViewData["EmailTitle"] = "Welcome!";
+}
+
+<p>
+    We're excited to have you get started. First, you need to confirm your account. Just press the button below.
+</p>
+
+<br />
+
+@await Html.PartialAsync("EmailButton", new EmailButtonViewModel("Confirm Account", Model.ConfirmEmailUrl))
+
+<br />
+
+<p>
+    If you don’t use this link within 2 hours, it will expire.
+</p>
+
+<br />
+
+<p>
+    Thanks, The @Model.CompanyName Team
+</p>
